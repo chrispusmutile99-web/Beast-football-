@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#07130d">
+  <title>BEAST FOOTBALL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game">
+    <header class="topbar">
+      <div class="brand">🦁 BEAST <span>FOOTBALL</span></div>
+      <div class="scoreboard">
+        <span class="team">BEAST</span>
+        <strong id="homeScore">0</strong>
+        <span>:</span>
+        <strong id="awayScore">0</strong>
+        <span class="team">RIVALS</span>
+      </div>
+      <div id="timer">00:00</div>
+    </header>
+
+    <section class="stadium" aria-label="Football pitch">
+      <div class="crowd">
+        <span>BEAST ARENA</span>
+        <span>PLAY TO WIN</span>
+      </div>
+      <div class="pitch">
+        <div class="halfway"></div>
+        <div class="center-circle"></div>
+        <div class="center-spot"></div>
+        <div class="box left-box"></div>
+        <div class="box right-box"></div>
+        <div class="goal left-goal"></div>
+        <div class="goal right-goal"></div>
+        <div id="ball">⚽</div>
+        <div id="player" class="player controlled">
+          <span>10</span>
+        </div>
+        <div id="teammate" class="player teammate">
+          <span>9</span>
+        </div>
+        <div id="opponent" class="player opponent">
+          <span>7</span>
+        </div>
+        <div id="opponent2" class="player opponent">
+          <span>11</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="match-message" id="message" aria-live="polite">
+      BEAST FOOTBALL · READY
+    </div>
+
+    <footer class="controls">
+      <div class="movement">
+        <div id="joystick" class="joystick">
+          <div id="stick" class="stick"></div>
+        </div>
+        <small>MOVE</small>
+      </div>
+
+      <div class="actions">
+        <button id="btnA" class="action a">A</button>
+        <button id="btnB" class="action b">B</button>
+        <button id="btnC" class="action c">C</button>
+        <small>SHOOT · PASS · THROUGH</small>
+      </div>
+    </footer>
+
+    <div class="bottomline">
+      <span>GESTURE SKILLS ENABLED</span>
+      <button id="pauseBtn">Ⅱ PAUSE</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
