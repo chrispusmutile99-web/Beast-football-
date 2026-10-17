@@ -1,8 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
-:root{--bg:#07120d;--panel:#0e2017;--panel2:#142a1e;--green:#35e27d;--green2:#8cffb5;--gold:#f3c86b;--blue:#62b9ff;--white:#f5fff8;--muted:#a4b9aa;--line:rgba(255,255,255,.12);--safe-bottom:env(safe-area-inset-bottom,0px)}
-*{box-sizing:border-box}html,body,#app{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--white);font-family:Inter,system-ui,sans-serif}body{overscroll-behavior:none}button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:2px solid var(--green);outline-offset:3px}#app{position:relative;isolation:isolate}#game-root{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at 50% 65%,#1b5b36,#07120d 70%)}#game-root canvas{display:block;width:100%;height:100%;touch-action:none}
-.hidden{display:none!important}.screen{position:absolute;inset:0;z-index:2;overflow:auto}.loading{position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#07120d;gap:15px}.brand-mark{width:64px;height:64px;border:2px solid var(--gold);border-radius:20px;display:grid;place-items:center;color:var(--gold);font-size:36px;box-shadow:0 0 35px #f3c86b20;transform:rotate(-5deg)}.brand-mark.large{width:82px;height:82px;font-size:48px;margin:0 auto 14px}.brand-mark.small{width:35px;height:35px;border-radius:10px;font-size:23px;flex-shrink:0}.brand-title{font:800 30px 'Barlow Condensed',sans-serif;letter-spacing:2px}.brand-title span,.top-brand strong{color:var(--green)}.loading-track{width:min(260px,70vw);height:5px;background:#1b3426;border-radius:9px;overflow:hidden}.loading-track i{display:block;width:0;height:100%;background:var(--green);transition:width .25s}.loading p{font-size:12px;color:var(--muted)}.intro{display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,rgba(2,13,8,.96),rgba(4,20,12,.68) 55%,rgba(4,13,9,.86));overflow:hidden}.intro:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 9%,rgba(59,226,125,.035) 9.2% 9.4%),linear-gradient(0deg,rgba(42,173,94,.17),transparent 52%);pointer-events:none}.intro-shade{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 45%,transparent,#06110b 75%)}.intro-content{position:relative;width:min(540px,100%);padding:28px 24px;text-align:center}.eyebrow{font-size:10px;font-weight:800;letter-spacing:2.4px;color:var(--gold)}h1,h2,p{margin-top:0}h1{font:900 clamp(48px,12vw,82px)/.82 'Barlow Condensed',sans-serif;letter-spacing:1px;margin:12px 0 18px}h1 span,h2 span{color:var(--green)}.tagline{font-size:11px;letter-spacing:2px;color:#d5e7da;margin-bottom:28px}.intro-actions{display:grid;gap:10px;max-width:330px;margin:auto}.btn{border:1px solid transparent;border-radius:10px;min-height:48px;padding:12px 18px;font-weight:800;font-size:12px;letter-spacing:1px;transition:transform .15s,filter .15s}.btn:active,.tile:active{transform:scale(.98)}.btn.primary{background:linear-gradient(110deg,#29d970,#7cffac);color:#04140a;box-shadow:0 8px 30px #35e27d25}.btn.secondary{background:rgba(255,255,255,.055);border-color:var(--line)}.btn.text-button{background:transparent;color:var(--muted);border-color:transparent}.intro-bottom{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:24px}.intro-bottom span{font-size:9px;color:#8da495;letter-spacing:1px}.icon-btn{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);background:#0b1a12cc;border-radius:12px;font-size:19px}.menu-screen{background:linear-gradient(180deg,#07120d 0%,#0b1b12 100%);padding:0 18px calc(22px + var(--safe-bottom));overflow-y:auto}.topbar{height:66px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:3;background:#07120dee;backdrop-filter:blur(12px);margin:0 -18px;padding:0 18px;border-bottom:1px solid var(--line)}.top-brand{display:flex;align-items:center;gap:9px}.top-brand strong{display:block;font:800 16px 'Barlow Condensed',sans-serif;letter-spacing:1px}.top-brand small{display:block;font-size:8px;color:var(--muted);letter-spacing:1.4px;margin-top:2px}.menu-hero{min-height:190px;position:relative;overflow:hidden;border:1px solid #315b3f;border-radius:18px;margin:18px 0;padding:24px;background:linear-gradient(110deg,#102e1d,#0a1c12 66%,#183f29)}.menu-hero:after{content:"";position:absolute;right:-80px;bottom:-160px;width:300px;height:300px;border:1px solid #72ff9b25;border-radius:50%;box-shadow:0 0 0 30px #72ff9b08,0 0 0 60px #72ff9b05}.hero-copy{position:relative;z-index:1;max-width:340px}.hero-copy h2{font:900 clamp(30px,7vw,45px)/.9 'Barlow Condensed',sans-serif;margin:10px 0}.hero-copy p{max-width:245px;font-size:11px;color:#b6cbbd;line-height:1.5;margin-bottom:16px}.hero-copy .btn{min-height:42px}.hero-ball{position:absolute;right:4%;top:32px;font-size:clamp(70px,20vw,135px);opacity:.14;filter:grayscale(1);transform:rotate(-15deg)}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.tile{min-height:108px;text-align:left;padding:13px 10px;border-radius:13px;border:1px solid var(--line);background:linear-gradient(145deg,#13281c,#0c1c13);display:flex;flex-direction:column;gap:6px;overflow:hidden}.tile>span{font-size:22px}.tile b{font-size:11px;line-height:1.2}.tile small{font-size:9px;line-height:1.35;color:var(--muted)}.menu-footer{display:flex;justify-content:space-between;gap:10px;color:#718879;font-size:8px;letter-spacing:.6px;margin:20px 0 0;flex-wrap:wrap}.drawer-backdrop{position:absolute;inset:0;z-index:7;background:#0009;backdrop-filter:blur(2px)}.drawer{position:absolute;z-index:8;left:0;top:0;bottom:0;width:min(310px,86vw);background:#09170f;border-right:1px solid #244832;transform:translateX(-105%);transition:transform .23s ease;display:flex;flex-direction:column;padding:14px 12px calc(12px + var(--safe-bottom));box-shadow:15px 0 45px #0005}.drawer.open{transform:translateX(0)}.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:3px 3px 15px;border-bottom:1px solid var(--line)}.drawer-items{overflow-y:auto;padding:8px 0;display:grid;gap:3px}.drawer-items button{display:flex;align-items:center;gap:12px;text-align:left;background:transparent;border:1px solid transparent;border-radius:9px;padding:11px 12px;color:#d6e8dc;font-size:15px}.drawer-items button span{font-size:12px}.drawer-items button.active,.drawer-items button:hover{background:#173522;border-color:#2a6540;color:var(--green2)}.drawer-note{margin-top:auto;border-top:1px solid var(--line);padding:13px 8px 5px;font-size:10px;letter-spacing:1px;color:var(--green2)}.drawer-note small{display:inline-block;margin-top:6px;color:var(--muted);letter-spacing:0;font-size:10px}.sub-screen{background:linear-gradient(180deg,#07120d,#0c1e14);padding:0 16px calc(24px + var(--safe-bottom));overflow:auto}.sub-header{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:12px;height:65px;margin:0 -16px;padding:0 16px;background:#07120df0;border-bottom:1px solid var(--line)}.sub-header h2{font:800 23px 'Barlow Condensed',sans-serif;margin:0;flex:1}.sub-chip{font-size:9px;letter-spacing:1px;color:var(--green);border:1px solid #28663e;border-radius:30px;padding:6px 9px}.sub-content{max-width:900px;margin:20px auto}.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}.team-card{border:1px solid var(--line);background:#102318;border-radius:14px;padding:14px;text-align:left;min-height:145px}.team-card.selected{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:#173a25}.team-badge{width:44px;height:44px;display:grid;place-items:center;border:2px solid var(--gold);border-radius:14px;color:var(--gold);font-size:23px;margin-bottom:10px}.team-card b{display:block;font-size:13px}.team-card small{display:block;color:var(--muted);font-size:10px;margin-top:5px}.kit-swatches{display:flex;gap:5px;margin-top:10px}.kit-swatches i{width:22px;height:8px;border-radius:4px}.panel{background:#102318;border:1px solid var(--line);border-radius:14px;padding:17px;margin-bottom:12px}.panel h3{font:700 18px 'Barlow Condensed',sans-serif;margin:0 0 12px}.panel p,.muted{font-size:12px;color:var(--muted);line-height:1.55}.field-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.field-row label{font-size:12px;color:#c6d8cc;flex:1;min-width:120px}.field-row select,.field-row input[type=range]{width:100%;max-width:240px;background:#08150e;color:white;border:1px solid #2b4b35;border-radius:8px;padding:10px}.field-row input[type=range]{padding:0;accent-color:var(--green)}.field-row select{flex:1}.formation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.formation-choice{background:#102318;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}.formation-choice.selected{border-color:var(--green)}.formation-choice b{display:block;margin-bottom:8px}.formation-diagram{height:100px;background:repeating-linear-gradient(0deg,#1b6a3a 0 20px,#1a6035 20px 40px);border:1px solid #9de5ac;border-radius:7px;position:relative;overflow:hidden}.formation-diagram:before{content:"";position:absolute;inset:8px 18px;border:1px solid #c5f0ce8c;border-radius:2px}.formation-diagram:after{content:"";position:absolute;top:50%;left:18px;right:18px;border-top:1px solid #c5f0ce8c}.formation-dots{position:absolute;inset:12px 22px;display:flex;flex-direction:column;justify-content:space-around;align-items:center}.formation-dots span{display:flex;justify-content:center;gap:8px}.formation-dots i{width:7px;height:7px;background:#fff;border:1px solid #0c5d2a;border-radius:50%}.profile-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat-box{background:#09180f;border-radius:10px;padding:13px 7px;text-align:center}.stat-box strong{display:block;font:800 23px 'Barlow Condensed',sans-serif;color:var(--green)}.stat-box small{font-size:9px;color:var(--muted)}.warning-box{border:1px solid #806d34;background:#3b30151f;border-radius:10px;padding:12px;font-size:11px;color:#e6d29a;line-height:1.5}.game-ui{position:absolute;inset:0;z-index:5;pointer-events:none;touch-action:none}.match-top{position:absolute;top:max(9px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);width:min(520px,calc(100% - 105px));height:46px;display:flex;align-items:center;justify-content:center;gap:9px;background:#06140ddc;border:1px solid #ffffff24;border-radius:10px;padding:4px 8px;backdrop-filter:blur(8px);pointer-events:auto}.pause-button{position:absolute;left:-47px;width:39px;height:39px;border-radius:10px;border:1px solid #ffffff25;background:#06140ddc;font-weight:900}.scoreboard{display:flex;align-items:center;justify-content:center;gap:clamp(5px,1.7vw,13px);min-width:0;white-space:nowrap}.scoreboard span{font:700 clamp(8px,1.8vw,11px) 'Barlow Condensed',sans-serif;max-width:75px;overflow:hidden;text-overflow:ellipsis}.scoreboard strong{font:900 20px 'Barlow Condensed',sans-serif;color:var(--green2)}.scoreboard i{font-style:normal;color:#8ea89a}.match-clock{position:absolute;right:7px;top:100%;margin-top:5px;font:800 13px 'Barlow Condensed',sans-serif;background:#06140ddc;border:1px solid #ffffff22;border-radius:7px;padding:5px 8px}.match-message{position:absolute;top:17%;left:50%;transform:translate(-50%,-50%);font:900 clamp(20px,5vw,36px) 'Barlow Condensed',sans-serif;letter-spacing:2px;text-shadow:0 2px 12px #000;text-align:center;color:#fff;opacity:0;transition:opacity .25s;white-space:nowrap}.match-message.show{opacity:1}.mini-map{position:absolute;bottom:calc(17px + var(--safe-bottom));left:50%;transform:translateX(-50%);width:clamp(100px,18vw,150px);aspect-ratio:180/112;border:1px solid #ffffff75;border-radius:6px;background:#07180dcc;overflow:hidden;opacity:.9}.mini-map canvas{width:100%;height:100%;display:block}.control-hint{position:absolute;left:50%;bottom:calc(5px + var(--safe-bottom));transform:translateX(-50%);font-size:7px;letter-spacing:.4px;white-space:nowrap;color:#e7f8ec;background:#06140dbb;padding:4px 7px;border-radius:5px}.joystick-zone{position:absolute;left:0;bottom:0;width:43%;height:45%;pointer-events:auto;touch-action:none}.joystick-base{position:absolute;left:clamp(22px,5vw,58px);bottom:calc(24px + var(--safe-bottom));width:clamp(100px,17vw,142px);height:clamp(100px,17vw,142px);border-radius:50%;background:#dfffea18;border:2px solid #eafff04c;box-shadow:inset 0 0 18px #0003;display:grid;place-items:center;touch-action:none}.joystick-knob{width:42%;height:42%;border-radius:50%;background:#eafff044;border:2px solid #effff0a0;box-shadow:0 3px 12px #0005;transform:translate(0,0)}.action-controls{position:absolute;right:clamp(16px,4vw,45px);bottom:calc(20px + var(--safe-bottom));width:clamp(145px,26vw,215px);height:clamp(145px,27vw,215px);pointer-events:none}.action-button{position:absolute;width:clamp(49px,9vw,70px);height:clamp(49px,9vw,70px);border-radius:50%;border:2px solid #ffffff90;background:#0b1c14a6;box-shadow:inset 0 0 18px #ffffff0b,0 4px 12px #0004;font:900 clamp(20px,4vw,29px) 'Barlow Condensed',sans-serif;pointer-events:auto;touch-action:none;user-select:none}.action-button:active,.action-button.pressed{background:#35e27d88;border-color:#b6ffd0;transform:scale(.94)}.button-a{right:0;bottom:0}.button-b{left:0;bottom:12%}.button-c{right:10%;top:0}.sprint-button{position:absolute;left:0;top:0;transform:translate(-7%,-15%);border:1px solid #ffffff55;border-radius:30px;background:#081b11b8;padding:8px 11px;font-size:9px;letter-spacing:1px;pointer-events:auto;touch-action:none}.overlay{position:absolute;inset:0;z-index:10;background:#020805c9;backdrop-filter:blur(8px);display:grid;place-items:center;padding:18px}.dialog{width:min(380px,100%);border:1px solid #3a6546;border-radius:18px;background:linear-gradient(145deg,#10291a,#07130c);padding:26px;text-align:center;box-shadow:0 20px 80px #0009}.dialog h2{font:900 30px 'Barlow Condensed',sans-serif;margin:10px 0}.dialog .btn{width:100%;margin-top:9px}.final-score{font:900 42px 'Barlow Condensed',sans-serif;color:var(--green);margin:10px}.dialog p{font-size:12px;color:var(--muted)}.toast{position:absolute;z-index:30;bottom:20px;left:50%;transform:translateX(-50%);max-width:90%;background:#102c1c;border:1px solid #4a8d5d;border-radius:10px;padding:12px 16px;font-size:12px;text-align:center;box-shadow:0 8px 35px #0007}.game-ui~.screen{pointer-events:none}
-@media(min-width:850px){.menu-screen{padding-left:max(24px,calc((100vw - 1100px)/2));padding-right:max(24px,calc((100vw - 1100px)/2))}.topbar{margin-left:calc(min(0px, (1100px - 100vw)/2));margin-right:calc(min(0px, (1100px - 100vw)/2))}.menu-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.menu-hero{min-height:225px;padding:32px}.hero-copy h2{font-size:52px}.control-hint{font-size:9px}.joystick-zone{width:35%;height:50%}.action-controls{right:5%;bottom:5%}.joystick-base{left:50px;bottom:40px}}
-@media(max-width:420px){.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tile{min-height:96px}.menu-hero{padding:19px;min-height:185px}.hero-copy h2{font-size:35px}.menu-footer{font-size:7px}.match-top{width:calc(100% - 90px);gap:4px}.scoreboard{gap:4px}.scoreboard span{max-width:54px;font-size:8px}.scoreboard strong{font-size:17px}.mini-map{bottom:calc(12px + var(--safe-bottom));left:50%;width:100px}.control-hint{bottom:calc(2px + var(--safe-bottom));font-size:6px;max-width:55%;white-space:normal;text-align:center}.joystick-base{width:95px;height:95px;left:17px;bottom:calc(30px + var(--safe-bottom))}.action-controls{width:138px;height:142px;right:10px;bottom:calc(26px + var(--safe-bottom))}.action-button{width:48px;height:48px;font-size:20px}.sprint-button{font-size:8px;padding:7px 8px}.match-message{top:22%}}
-@media(orientation:portrait) and (max-width:650px){.game-ui:after{content:"For the best match view, rotate your phone to landscape.";position:absolute;top:62px;left:50%;transform:translateX(-50%);max-width:85%;font-size:9px;color:#fff;background:#06140da8;padding:6px 9px;border-radius:6px;text-align:center;white-space:nowrap;opacity:.8}.match-top{top:7px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#07120d">
+  <meta name="description" content="BEAST FOOTBALL — One Game. One Beast. One Champion.">
+  <title>BEAST FOOTBALL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <div id="game-root" aria-label="3D football game"></div>
+    <div id="loading" class="loading">
+      <div class="brand-mark">♌</div>
+      <div class="brand-title">BEAST <span>FOOTBALL</span></div>
+      <div class="loading-track"><i id="loading-bar"></i></div>
+      <p id="loading-message">Preparing the pitch…</p>
+      <button id="loading-retry" class="btn secondary hidden">RETRY</button>
+    </div>
+
+    <section id="intro" class="screen intro hidden">
+      <div class="intro-shade"></div>
+      <div class="intro-content">
+        <div class="brand-mark large">♌</div>
+        <p class="eyebrow">THE NEXT GENERATION OF FOOTBALL</p>
+        <h1>BEAST<br><span>FOOTBALL</span></h1>
+        <p class="tagline">ONE GAME. ONE BEAST. ONE CHAMPION.</p>
+        <div class="intro-actions">
+          <button id="intro-play" class="btn primary">PLAY</button>
+          <button id="intro-guest" class="btn secondary">GUEST PLAY</button>
+          <button id="intro-signin" class="btn text-button">SIGN IN · COMING SOON</button>
+        </div>
+        <div class="intro-bottom">
+          <button id="intro-settings" class="icon-btn" aria-label="Settings">⚙</button>
+          <button id="sound-toggle" class="icon-btn" aria-label="Toggle sound">🔊</button>
+          <span>EARLY PLAYABLE PROTOTYPE · v0.1.0</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="screen menu-screen hidden">
+      <header class="topbar">
+        <button id="drawer-open" class="icon-btn" aria-label="Open menu">☰</button>
+        <div class="top-brand"><span class="brand-mark small">♌</span><div><strong>BEAST FOOTBALL</strong><small>ONE GAME. ONE BEAST.</small></div></div>
+        <button id="menu-settings" class="icon-btn" aria-label="Settings">⚙</button>
+      </header>
+      <div class="menu-hero">
+        <div class="hero-copy">
+          <span class="eyebrow">YOUR PITCH. YOUR LEGACY.</span>
+          <h2>RISE TO<br><span>THE CHALLENGE.</span></h2>
+          <p>Build your style. Take the shot. Become the champion.</p>
+          <button id="quick-match" class="btn primary">⚽ QUICK MATCH</button>
+        </div>
+        <div class="hero-ball" aria-hidden="true">⚽</div>
+      </div>
+      <div class="menu-grid">
+        <button data-screen="teams" class="tile"><span>👕</span><b>Team Selection</b><small>Choose your colours</small></button>
+        <button data-screen="formation" class="tile"><span>📋</span><b>Formation</b><small>Set your tactics</small></button>
+        <button data-screen="training" class="tile"><span>🎯</span><b>Training</b><small>Learn the controls</small></button>
+        <button id="practice-match" class="tile"><span>🥅</span><b>Practice Match</b><small>Play offline</small></button>
+        <button data-coming="Online Match" class="tile"><span>🌐</span><b>Online Match</b><small>Coming soon</small></button>
+        <button data-coming="Tournaments" class="tile"><span>🏆</span><b>Tournaments</b><small>Coming soon</small></button>
+        <button data-coming="Rankings" class="tile"><span>📈</span><b>Rankings</b><small>Coming soon</small></button>
+        <button data-screen="profile" class="tile"><span>👤</span><b>My Profile</b><small>Guest profile</small></button>
+        <button data-screen="inventory" class="tile"><span>🎒</span><b>Inventory</b><small>Virtual items only</small></button>
+        <button data-screen="history" class="tile"><span>🕘</span><b>Match History</b><small>Local demo records</small></button>
+        <button data-screen="settings" class="tile"><span>⚙️</span><b>Settings</b><small>Make it yours</small></button>
+        <button data-coming="Help" class="tile"><span>❔</span><b>Help</b><small>Control guide</small></button>
+      </div>
+      <footer class="menu-footer"><span>BEAST FOOTBALL · ORIGINAL PROTOTYPE</span><span>Virtual practice only · No real money</span></footer>
+    </section>
+
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <nav id="drawer" class="drawer" aria-label="Main navigation">
+      <div class="drawer-head"><div class="top-brand"><span class="brand-mark small">♌</span><div><strong>BEAST FOOTBALL</strong><small>PLAYER MENU</small></div></div><button id="drawer-close" class="icon-btn">✕</button></div>
+      <div id="drawer-items" class="drawer-items">
+        <button data-dest="home">⌂ <span>Home</span></button>
+        <button data-dest="quick">⚽ <span>Quick Match</span></button>
+        <button data-dest="teams">👕 <span>Team Selection</span></button>
+        <button data-dest="formation">▦ <span>Formation</span></button>
+        <button data-dest="training">🎯 <span>Training</span></button>
+        <button data-dest="practice">🥅 <span>Practice</span></button>
+        <button data-dest="online">🌐 <span>Online Match · Soon</span></button>
+        <button data-dest="tournaments">🏆 <span>Tournaments · Soon</span></button>
+        <button data-dest="rankings">📈 <span>Rankings · Soon</span></button>
+        <button data-dest="history">🕘 <span>Match History</span></button>
+        <button data-dest="profile">👤 <span>Profile</span></button>
+        <button data-dest="inventory">🎒 <span>Inventory</span></button>
+        <button data-dest="settings">⚙ <span>Settings</span></button>
+        <button data-dest="help">❔ <span>Help · Soon</span></button>
+      </div>
+      <div class="drawer-note">GUEST SESSION<br><small>Online services are not connected.</small></div>
+    </nav>
+
+    <section id="subscreen" class="screen sub-screen hidden">
+      <header class="sub-header"><button id="sub-back" class="icon-btn">←</button><h2 id="sub-title">Team Selection</h2><span class="sub-chip">BEAST</span></header>
+      <div id="sub-content" class="sub-content"></div>
+    </section>
+
+    <section id="game-ui" class="game-ui hidden">
+      <div class="match-top">
+        <button id="pause-button" class="pause-button" aria-label="Pause">Ⅱ</button>
+        <div class="scoreboard"><span id="home-label">BEAST UTD</span><strong id="home-score">0</strong><i>—</i><strong id="away-score">0</strong><span id="away-label">THUNDER FC</span></div>
+        <div id="match-clock" class="match-clock">00:00</div>
+      </div>
+      <div id="match-message" class="match-message">KICK OFF!</div>
+      <div id="mini-map" class="mini-map"><canvas id="mini-canvas" width="180" height="112"></canvas></div>
+      <div class="control-hint" id="control-hint">JOYSTICK: MOVE · A: SHOOT/TACKLE · B: PASS/SWITCH · C: THROUGH PASS</div>
+      <div id="joystick-zone" class="joystick-zone">
+        <div id="joystick-base" class="joystick-base"><div id="joystick-knob" class="joystick-knob"></div></div>
+      </div>
+      <div class="action-controls">
+        <button id="button-b" class="action-button button-b" aria-label="Pass or switch">B</button>
+        <button id="button-a" class="action-button button-a" aria-label="Shoot or tackle">A</button>
+        <button id="button-c" class="action-button button-c" aria-label="Through pass">C</button>
+        <button id="sprint-button" class="sprint-button" aria-label="Sprint">SPRINT</button>
+      </div>
+    </section>
+
+    <section id="pause-overlay" class="overlay hidden">
+      <div class="dialog">
+        <span class="eyebrow">MATCH PAUSED</span><h2>TAKE A BREATHER</h2>
+        <button id="resume-match" class="btn primary">RESUME</button>
+        <button id="restart-match" class="btn secondary">RESTART MATCH</button>
+        <button id="pause-settings" class="btn secondary">SETTINGS</button>
+        <button id="leave-match" class="btn text-button">RETURN TO MENU</button>
+      </div>
+    </section>
+    <section id="fulltime-overlay" class="overlay hidden">
+      <div class="dialog"><span class="eyebrow">FULL TIME</span><h2 id="result-title">MATCH COMPLETE</h2><div id="final-score" class="final-score">0 — 0</div><p id="result-text">Good game.</p><button id="rematch-button" class="btn primary">REMATCH</button><button id="result-menu" class="btn secondary">MAIN MENU</button></div>
+    </section>
+    <div id="toast" class="toast hidden" role="status"></div>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
