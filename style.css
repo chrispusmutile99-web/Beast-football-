@@ -1,0 +1,494 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --green: #21ed83;
+  --dark: #06120c;
+  --panel: #101d17;
+  --white: #f4fff8;
+  --red: #ff414b;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--dark);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  touch-action: none;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(#10251a, #06120c);
+}
+
+.topbar {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(100deg, #06110b, #173b26);
+  border-bottom: 2px solid var(--green);
+  z-index: 5;
+}
+
+.brand {
+  font-size: clamp(12px, 2.6vw, 20px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.brand span {
+  color: var(--green);
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background: #020704;
+  border: 1px solid #42634d;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.team {
+  color: #c9dfd0;
+  font-size: 10px;
+}
+
+#timer {
+  min-width: 42px;
+  text-align: right;
+  font-weight: 900;
+  color: var(--green);
+}
+
+.stadium {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 5px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, #52654e 0%, transparent 65%),
+    linear-gradient(#17291e, #050a07);
+}
+
+.crowd {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  height: 25%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-top: 10px;
+  overflow: hidden;
+  color: #a6c4ae;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: .65;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #14271b 0 5px,
+      #1b3827 5px 10px,
+      #263b2c 10px 14px
+    );
+}
+
+.pitch {
+  width: min(96%, 1050px);
+  aspect-ratio: 1.8 / 1;
+  max-height: 76%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.85);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #247d3c 0%,
+      #247d3c 12.5%,
+      #2d9147 12.5%,
+      #2d9147 25%
+    );
+  box-shadow:
+    0 0 0 5px #15251a,
+    0 12px 35px #000b;
+  transform: perspective(900px) rotateX(8deg);
+}
+
+.pitch::before {
+  content: "";
+  position: absolute;
+  inset: 4%;
+  border: 1.5px solid rgba(255,255,255,.9);
+  pointer-events: none;
+}
+
+.halfway {
+  position: absolute;
+  top: 4%;
+  bottom: 4%;
+  left: 50%;
+  border-left: 1.5px solid white;
+}
+
+.center-circle {
+  position: absolute;
+  width: 18%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-spot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  position: absolute;
+  top: 25%;
+  width: 15%;
+  height: 50%;
+  border: 1.5px solid white;
+}
+
+.left-box {
+  left: 4%;
+}
+
+.right-box {
+  right: 4%;
+}
+
+.goal {
+  position: absolute;
+  top: 39%;
+  width: 4%;
+  height: 22%;
+  border: 2px solid white;
+  background: #ffffff18;
+}
+
+.left-goal {
+  left: -1%;
+}
+
+.right-goal {
+  right: -1%;
+}
+
+.player {
+  position: absolute;
+  width: clamp(24px, 4vw, 39px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  color: white;
+  font-size: 11px;
+  font-weight: 900;
+  box-shadow: 0 4px 5px #0008;
+  transition: left .08s linear, top .08s linear;
+  z-index: 2;
+}
+
+.player span {
+  pointer-events: none;
+}
+
+.controlled {
+  left: 35%;
+  top: 55%;
+  background: linear-gradient(135deg, #3ef3a0, #08733b);
+  box-shadow: 0 0 0 4px #b4ffd344, 0 4px 6px #0009;
+}
+
+.teammate {
+  left: 25%;
+  top: 30%;
+  background: linear-gradient(135deg, #f9fbff, #879bb1);
+  color: #092017;
+}
+
+.opponent {
+  background: linear-gradient(135deg, #ff6971, #a90919);
+}
+
+#opponent {
+  left: 66%;
+  top: 35%;
+}
+
+#opponent2 {
+  left: 72%;
+  top: 65%;
+}
+
+#ball {
+  position: absolute;
+  left: 40%;
+  top: 58%;
+  z-index: 3;
+  font-size: clamp(17px, 3vw, 26px);
+  filter: drop-shadow(0 3px 2px #0008);
+  transition: left .12s linear, top .12s linear;
+}
+
+.match-message {
+  min-height: 25px;
+  display: grid;
+  place-items: center;
+  padding: 4px 10px;
+  background: #08130c;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.controls {
+  min-height: 132px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 6%;
+  background: linear-gradient(#14251a, #07110b);
+  border-top: 1px solid #294833;
+}
+
+.movement,
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.joystick {
+  width: clamp(85px, 23vw, 120px);
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid #7e9d87;
+  background: #d4ffe21a;
+  box-shadow: inset 0 0 18px #0007;
+  touch-action: none;
+}
+
+.stick {
+  position: absolute;
+  width: 42%;
+  aspect-ratio: 1;
+  top: 29%;
+  left: 29%;
+  border-radius: 50%;
+  border: 2px solid #b7ffcf;
+  background: radial-gradient(circle at 35% 30%, #4cf99b, #08763a);
+  box-shadow: 0 3px 10px #0009;
+  pointer-events: none;
+}
+
+.movement small,
+.actions small {
+  color: #b9d5c2;
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.actions {
+  align-items: flex-end;
+}
+
+.actions > div {
+  display: flex;
+  gap: 10px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, clamp(45px, 12vw, 62px));
+  gap: 7px;
+  justify-items: center;
+}
+
+.action {
+  width: clamp(45px, 12vw, 62px);
+  aspect-ratio: 1;
+  border: 2px solid #ffffffa8;
+  border-radius: 50%;
+  font-size: 23px;
+  font-weight: 900;
+  color: white;
+  box-shadow: 0 5px 0 #0007;
+}
+
+.action:active {
+  transform: scale(.91);
+  box-shadow: 0 2px 0 #0007;
+}
+
+.a {
+  background: linear-gradient(145deg, #ff6970, #a90017);
+}
+
+.b {
+  background: linear-gradient(145deg, #4da9ff, #1741a0);
+}
+
+.c {
+  background: linear-gradient(145deg, #43ed9b, #08743a);
+}
+
+.actions small {
+  grid-column: 1 / -1;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.bottomline {
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 14px;
+  background: #030805;
+  color: #8ba694;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+#pauseBtn {
+  padding: 6px 12px;
+  border: 1px solid #51705b;
+  border-radius: 7px;
+  color: white;
+  background: #14251a;
+  font-size: 10px;
+}
+
+@media (orientation: portrait) {
+  .topbar {
+    min-height: 57px;
+    padding: 8px;
+  }
+
+  .scoreboard {
+    gap: 5px;
+    padding: 7px;
+    font-size: 16px;
+  }
+
+  .stadium {
+    min-height: 0;
+  }
+
+  .pitch {
+    width: 96%;
+    max-height: 50%;
+  }
+
+  .controls {
+    min-height: 142px;
+    padding: 8px 5%;
+  }
+
+  .actions {
+    gap: 6px;
+  }
+
+  .bottomline {
+    min-height: 32px;
+  }
+}
+
+@media (max-height: 480px) {
+  .topbar {
+    min-height: 43px;
+    padding: 4px 10px;
+  }
+
+  .stadium {
+    padding: 5px;
+  }
+
+  .pitch {
+    max-height: 90%;
+  }
+
+  .controls {
+    min-height: 90px;
+    padding: 4px 6%;
+  }
+
+  .joystick {
+    width: 75px;
+  }
+
+  .action {
+    width: 43px;
+    font-size: 18px;
+  }
+
+  .actions {
+    grid-template-columns: repeat(3, 43px);
+  }
+
+  .match-message {
+    min-height: 19px;
+  }
+
+  .bottomline {
+    min-height: 25px;
+  }
+}
